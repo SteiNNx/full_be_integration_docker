@@ -1,0 +1,19 @@
+{
+    "TableName": "be-comercios",
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "id_comercio",
+            "AttributeType": "S"
+        }
+    ],
+    "KeySchema": [
+        {
+            "AttributeName": "id_comercio",
+            "KeyType": "HASH"
+        }
+    ],
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+    }
+}

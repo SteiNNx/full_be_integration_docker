@@ -1,0 +1,24 @@
+{
+    "RequestItems": {
+        "auth_tokens": [
+            {
+                "PutRequest": {
+                    "Item": {
+                        "username": {
+                            "S": "user1"
+                        },
+                        "password": {
+                            "S": "$2a$10$EIX3jTkJlD/9nf9ZyGr5hO/9JhgP7y1LPt3ihYm8SzKU4r5SkFeW6"
+                        },
+                        "auth_token": {
+                            "S": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsIm5hbWUiOiJVc2VyIDEiLCJpYXQiOjE1MTYyMzkwMjJ9"
+                        },
+                        "expires_at": {
+                            "S": "2024-12-01T00:00:00Z"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

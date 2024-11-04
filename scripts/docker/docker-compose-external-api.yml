@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  flask_app:
+    build:
+      context: ../../
+      dockerfile: external_api_simulate/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=${FLASK_ENV}
+      - SECRET_KEY=${SECRET_KEY}
+      - FLASK_PORT=${FLASK_PORT}
+      - FLASK_PREFIX_URL=${FLASK_PREFIX_URL}
+      - PDF_OUTPUT_PATH=${PDF_OUTPUT_PATH}
+      - SIGNED_PDF_OUTPUT_PATH=${SIGNED_PDF_OUTPUT_PATH}
+      - SIGN_PRIVATE_KEY_PATH=${SIGN_PRIVATE_KEY_PATH}
+      - SIGN_PUBLIC_KEY_PATH=${SIGN_PUBLIC_KEY_PATH}
+      - SIGN_METADA_SIGNATURE_ATTRIBUTE_NAME=${SIGN_METADA_SIGNATURE_ATTRIBUTE_NAME}
+      - DEBUG=${FLASK_DEBUG}
+    volumes:
+      - ../../keys/signature:/keys/signature:ro  # Montar las claves .pem como volumen de solo lectura
+    restart: unless-stopped

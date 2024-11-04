@@ -1,0 +1,42 @@
+### Generar PDF
+POST http://localhost:5000/ms/v1/pdf/generate
+Content-Type: application/json
+
+{
+    "comercio": {
+        "id_comercio": "b2e1e9c6-4f89-11ec-81d3-0242ac130003",
+        "nombre": "ElectroMundo",
+        "categoria": "Electrónica",
+        "direccion": "Av. Libertador Bernardo O'Higgins 200, Santiago, Chile",
+        "telefono": "+56 2 2917 0000",
+        "fecha_de_creacion": "2022-01-15T09:30:00Z"
+    },
+    "sucursales": [
+        {
+            "id_sucursal": "suc1-b2e1e9c6",
+            "id_comercio": "b2e1e9c6-4f89-11ec-81d3-0242ac130003",
+            "nombre": "Sucursal Providencia",
+            "direccion": "Av. Providencia 1200, Santiago, Chile",
+            "telefono": "+56 2 2345 6789",
+            "gerente": "Carolina Soto",
+            "fecha_de_apertura": "2022-02-10T10:00:00Z"
+        },
+        {
+            "id_sucursal": "suc2-b2e1e9c6",
+            "id_comercio": "b2e1e9c6-4f89-11ec-81d3-0242ac130003",
+            "nombre": "Sucursal Las Condes",
+            "direccion": "Av. Las Condes 10230, Santiago, Chile",
+            "telefono": "+56 2 2567 8901",
+            "gerente": "José Ramírez",
+            "fecha_de_apertura": "2022-04-15T09:00:00Z"
+        }
+    ]
+}
+
+### Firmar PDF
+POST http://localhost:5000/ms/v1/signature/sign
+Content-Type: application/json
+
+{
+    "pdf_base64": "<INCLUDE_BASE64_ENCODED_PDF_HERE>"
+}

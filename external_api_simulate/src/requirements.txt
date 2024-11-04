@@ -1,0 +1,17 @@
+# Flask es el framework principal para la aplicación web
+Flask==2.3.3
+
+# ReportLab es una biblioteca potente para generar PDFs
+reportlab==3.6.12
+
+# PyPDF2 permite manipular archivos PDF, como leer y combinar
+PyPDF2==3.0.1
+
+# Cryptography proporciona funcionalidades para encriptación y firma digital
+cryptography==41.0.3
+
+# Python-dotenv es útil para cargar variables de entorno desde archivos .env
+python-dotenv==0.20.0
+
+# PDFKit es una herramienta para crear PDFs a partir de HTML, requiere wkhtmltopdf
+pdfkit

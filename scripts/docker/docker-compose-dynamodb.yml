@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  dynamodb:
+    hostname: dynamodb-database-host
+    container_name: dynamodb-container
+    image: amazon/dynamodb-local
+    command: "-jar DynamoDBLocal.jar -sharedDb"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -v http://localhost:8000 || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+      start_period: 3s
+    ports:
+      - "8000:8000"
+    volumes:
+      - dynamodb_data:/home/dynamodblocal/data
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
+      DYNAMODB_ENDPOINT: ${AWS_DYNAMODB_ENDPOINT}
+    networks:
+      - dynamodb_network
+
+  dynamodb-admin:
+    hostname: dynamodb-ui-admin
+    container_name: dynamodb-admin-container
+    image: aaronshaf/dynamodb-admin
+    depends_on:
+      dynamodb:
+        condition: service_healthy
+    ports:
+      - "8001:8001"
+    environment:
+      DYNAMO_ENDPOINT: http://host.docker.internal:8000
+      AWS_REGION: ${AWS_REGION}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    networks:
+      - dynamodb_network
+
+volumes:
+  dynamodb_data:
+
+networks:
+  dynamodb_network:
+    driver: bridge

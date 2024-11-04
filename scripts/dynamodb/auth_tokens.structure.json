@@ -1,0 +1,41 @@
+{
+    "TableName": "auth_tokens",
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "username",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "auth_token",
+            "AttributeType": "S"
+        }
+    ],
+    "KeySchema": [
+        {
+            "AttributeName": "username",
+            "KeyType": "HASH"
+        }
+    ],
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "authTokenIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "auth_token",
+                    "KeyType": "HASH"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "ProvisionedThroughput": {
+                "ReadCapacityUnits": 5,
+                "WriteCapacityUnits": 5
+            }
+        }
+    ],
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+    }
+}

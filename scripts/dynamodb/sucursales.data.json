@@ -1,0 +1,249 @@
+{
+    "RequestItems": {
+        "be-sucursales": [
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc1-b2e1e9c6"
+                        },
+                        "id_comercio": {
+                            "S": "b2e1e9c6-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal Providencia"
+                        },
+                        "direccion": {
+                            "S": "Av. Providencia 1200, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2345 6789"
+                        },
+                        "gerente": {
+                            "S": "Carolina Soto"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2022-02-10T10:00:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc2-b2e1e9c6"
+                        },
+                        "id_comercio": {
+                            "S": "b2e1e9c6-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal Las Condes"
+                        },
+                        "direccion": {
+                            "S": "Av. Las Condes 10230, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2567 8901"
+                        },
+                        "gerente": {
+                            "S": "José Ramírez"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2022-04-15T09:00:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc3-b2e1e9c6"
+                        },
+                        "id_comercio": {
+                            "S": "b2e1e9c6-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal La Florida"
+                        },
+                        "direccion": {
+                            "S": "Av. Vicuña Mackenna 7890, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2789 6543"
+                        },
+                        "gerente": {
+                            "S": "María Paz González"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2022-06-20T08:30:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc1-a5f3a8d7"
+                        },
+                        "id_comercio": {
+                            "S": "a5f3a8d7-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal Maipú"
+                        },
+                        "direccion": {
+                            "S": "Av. Pajaritos 1234, Maipú, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2398 7654"
+                        },
+                        "gerente": {
+                            "S": "Felipe Contreras"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2023-07-05T11:00:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc2-a5f3a8d7"
+                        },
+                        "id_comercio": {
+                            "S": "a5f3a8d7-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal Quilicura"
+                        },
+                        "direccion": {
+                            "S": "Av. Matta 321, Quilicura, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2456 7800"
+                        },
+                        "gerente": {
+                            "S": "Lorena Figueroa"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2023-08-12T09:30:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc1-c1f4c2a9"
+                        },
+                        "id_comercio": {
+                            "S": "c1f4c2a9-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal Centro"
+                        },
+                        "direccion": {
+                            "S": "Paseo Huérfanos 750, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2765 4321"
+                        },
+                        "gerente": {
+                            "S": "Rodrigo Ríos"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2021-12-15T10:30:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc2-c1f4c2a9"
+                        },
+                        "id_comercio": {
+                            "S": "c1f4c2a9-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal Ñuñoa"
+                        },
+                        "direccion": {
+                            "S": "Av. Irarrázaval 2567, Ñuñoa, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2489 1234"
+                        },
+                        "gerente": {
+                            "S": "Daniela Pérez"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2022-03-20T09:00:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc3-c1f4c2a9"
+                        },
+                        "id_comercio": {
+                            "S": "c1f4c2a9-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal Plaza Italia"
+                        },
+                        "direccion": {
+                            "S": "Av. Vicuña Mackenna 20, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2781 2345"
+                        },
+                        "gerente": {
+                            "S": "Marcela Álvarez"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2022-05-10T11:15:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_sucursal": {
+                            "S": "suc4-c1f4c2a9"
+                        },
+                        "id_comercio": {
+                            "S": "c1f4c2a9-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Sucursal Estación Central"
+                        },
+                        "direccion": {
+                            "S": "Alameda 100, Estación Central, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2891 5678"
+                        },
+                        "gerente": {
+                            "S": "Jorge Fernández"
+                        },
+                        "fecha_de_apertura": {
+                            "S": "2022-07-25T09:45:00Z"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

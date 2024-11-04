@@ -1,0 +1,78 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+.pnpm-debug.log
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*.local
+.env.production
+.env.production.local
+
+# AWS related files
+.aws/
+*.key
+*.crt
+
+# Kubernetes and EKS files
+.kube/
+.helm/
+*.kubeconfig
+
+# AWS Lambda related files
+*.zip
+*.jar
+*.war
+
+# Build outputs
+build/
+dist/
+coverage/
+out/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test coverage files
+coverage/
+.nyc_output/
+
+# Miscellaneous
+*.log
+*.lock
+*.pid
+*.seed
+*.pid.lock
+
+# Logs and database dumps
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dmp
+
+# Local AWS configuration and credentials
+.aws/

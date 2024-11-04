@@ -1,0 +1,78 @@
+{
+    "RequestItems": {
+        "be-comercios": [
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_comercio": {
+                            "S": "b2e1e9c6-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "ElectroMundo"
+                        },
+                        "categoria": {
+                            "S": "Electrónica"
+                        },
+                        "direccion": {
+                            "S": "Av. Libertador Bernardo O'Higgins 200, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2917 0000"
+                        },
+                        "fecha_de_creacion": {
+                            "S": "2022-01-15T09:30:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_comercio": {
+                            "S": "a5f3a8d7-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Moda & Más"
+                        },
+                        "categoria": {
+                            "S": "Ropa y accesorios"
+                        },
+                        "direccion": {
+                            "S": "Paseo Ahumada 555, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2338 0000"
+                        },
+                        "fecha_de_creacion": {
+                            "S": "2023-06-25T14:45:00Z"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "id_comercio": {
+                            "S": "c1f4c2a9-4f89-11ec-81d3-0242ac130003"
+                        },
+                        "nombre": {
+                            "S": "Casa y Estilo"
+                        },
+                        "categoria": {
+                            "S": "Hogar y decoración"
+                        },
+                        "direccion": {
+                            "S": "Calle Nueva York 33, Santiago, Chile"
+                        },
+                        "telefono": {
+                            "S": "+56 2 2579 0000"
+                        },
+                        "fecha_de_creacion": {
+                            "S": "2021-11-10T12:00:00Z"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

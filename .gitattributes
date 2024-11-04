@@ -1,0 +1,85 @@
+# Definir el manejo de fin de línea (LF) para archivos de código y configuración
+*.js       text eol=lf
+*.ts       text eol=lf
+*.json     text eol=lf
+*.yaml     text eol=lf
+*.yml      text eol=lf
+*.xml      text eol=lf
+*.html     text eol=lf
+*.css      text eol=lf
+*.scss     text eol=lf
+*.md       text eol=lf
+*.sh       text eol=lf
+*.env      text eol=lf
+*.conf     text eol=lf
+
+# Archivos de imágenes y binarios no deben ser modificados en cuanto a EOL
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.ico      binary
+*.svg      text eol=lf
+
+# Archivos ejecutables
+*.exe      binary
+*.dll      binary
+*.so       binary
+*.dylib    binary
+
+# Archivos de fuentes
+*.ttf      binary
+*.otf      binary
+*.woff     binary
+*.woff2    binary
+
+# Archivos comprimidos
+*.zip      binary
+*.tar      binary
+*.gz       binary
+*.bz2      binary
+*.7z       binary
+
+# Archivos de documentos
+*.pdf      binary
+*.doc      binary
+*.docx     binary
+*.xls      binary
+*.xlsx     binary
+*.ppt      binary
+*.pptx     binary
+
+# Archivos de Docker
+Dockerfile text eol=lf
+
+# Archivos de código C/C++
+*.c        text eol=lf
+*.cpp      text eol=lf
+*.h        text eol=lf
+*.hpp      text eol=lf
+
+# Archivos de Python
+*.py       text eol=lf
+
+# Archivos de Java
+*.java     text eol=lf
+*.class    binary
+*.jar      binary
+
+# Archivos de configuración de Git
+.gitattributes text eol=lf
+.gitignore text eol=lf
+
+# Archivos de configuración de CI/CD
+*.gitlab-ci.yml text eol=lf
+.travis.yml text eol=lf
+
+# Archivos de configuración de Node.js
+*.js       text eol=lf
+*.mjs      text eol=lf
+*.cjs      text eol=lf
+*.jsx      text eol=lf
+*.ts       text eol=lf
+*.tsx      text eol=lf
+*.json     text eol=lf
+*.lock     text eol=lf

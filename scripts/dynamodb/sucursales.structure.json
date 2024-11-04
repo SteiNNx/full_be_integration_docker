@@ -1,0 +1,41 @@
+{
+    "TableName": "be-sucursales",
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "id_sucursal",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "id_comercio",
+            "AttributeType": "S"
+        }
+    ],
+    "KeySchema": [
+        {
+            "AttributeName": "id_sucursal",
+            "KeyType": "HASH"
+        }
+    ],
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "comercioindex",
+            "KeySchema": [
+                {
+                    "AttributeName": "id_comercio",
+                    "KeyType": "HASH"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            },
+            "ProvisionedThroughput": {
+                "ReadCapacityUnits": 5,
+                "WriteCapacityUnits": 5
+            }
+        }
+    ],
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+    }
+}
