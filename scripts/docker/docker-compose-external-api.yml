@@ -19,5 +19,6 @@ services:
       - SIGN_METADA_SIGNATURE_ATTRIBUTE_NAME=${SIGN_METADA_SIGNATURE_ATTRIBUTE_NAME}
       - DEBUG=${FLASK_DEBUG}
     volumes:
-      - ../../keys/signature:/keys/signature:ro  # Montar las claves .pem como volumen de solo lectura
+      - ../../keys/signature/private_key.pem:/app/src/keys/signature/private_key.pem:ro
+      - ../../keys/signature/public_key.pem:/app/src/keys/signature/public_key.pem:ro
     restart: unless-stopped

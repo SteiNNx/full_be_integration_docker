@@ -83,19 +83,28 @@ breakline() {
 #   1. Ruta del archivo .env (obligatorio): El archivo de donde cargar las variables de entorno.
 source_env_vars() {
     local env_file="$1"
-    
+
     if [ -f "$env_file" ]; then
-        # Cargar variables de entorno desde el archivo
-        export $(grep -v '^#' "$env_file" | xargs)
+        # Leer cada línea del archivo .env y exportar las variables manualmente
+        while IFS='=' read -r key value; do
+            # Ignorar líneas vacías o comentarios
+            if [[ ! $key =~ ^# && -n $key ]]; then
+                # Remover comillas del valor si existen
+                value="${value%\"}"
+                value="${value#\"}"
+                export "$key=$value"
+            fi
+        done < "$env_file"
         
         # Mensaje de éxito
         info "Variables de entorno cargadas desde $env_file."
-        breakline
     else
         # Mensaje de error crítico si no se encuentra el archivo
-        critical_error "Archivo $env_file no encontrado. Verifica su existencia y ubicación."
+        info "Error crítico: Archivo $env_file no encontrado. Verifica su existencia y ubicación." >&2
+        exit 1
     fi
 }
+
 
 # Función para registrar un mensaje en un archivo de registro
 # Argumentos:
