@@ -4,7 +4,11 @@
   "description": "commonjs_base",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "build": "echo 'No build step specified'",
+    "deploy": "echo 'Specify deployment command here'",
+    "clean": "rm -rf node_modules && npm install",
+    "debug": "node --inspect src/app.js"
   },
   "author": "jreyes",
   "license": "ISC",
@@ -13,9 +17,12 @@
     "@aws-sdk/util-dynamodb": "^3.682.0",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-openapi-validator": "^5.3.9",
+    "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "swagger-ui-express": "^5.0.1",
     "uuid": "^11.0.2",

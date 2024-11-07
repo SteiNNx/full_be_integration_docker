@@ -1,5 +1,5 @@
 #!/bin/bash
-# suit-local.sh
+# suit-local-up-db-and-external-api.sh
 # Autor: Jorge Reyes
 # Este script se encarga de inicializar los contenedores necesarios para la suite local de DynamoDB,
 # cargar datos de prueba y levantar una API externa en Python, todo en un entorno de desarrollo local.
