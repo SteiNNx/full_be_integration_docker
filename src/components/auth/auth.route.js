@@ -6,8 +6,8 @@ const {
     updateAuthTokenController,
 } = require('./auth.controller');
 
-const LoggerUtils = require('../../utils/LoggerUtils');
-const setHeadersMiddleware = require('../../utils/setHeadersMiddleware');
+const LoggerUtils = require('../../utils/logger.utils');
+const setHeadersMiddleware = require('../../middlewares/setHeaders.middleware');
 
 const logger = new LoggerUtils('auth.routes');
 

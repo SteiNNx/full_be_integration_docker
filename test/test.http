@@ -1,0 +1,40 @@
+### Prueba de inicio del servidor
+# Verifica que el servidor esté en ejecución y escucha en el puerto correcto
+GET http://localhost:3000/
+
+###
+
+### Prueba de obtener un usuario por nombre de usuario
+# GET a la ruta de autenticación para obtener datos de usuario por nombre de usuario
+GET http://localhost:3000/ms/v1/commonjs/user/user1
+
+### 
+# Reemplaza {username} con un nombre de usuario de prueba
+
+###
+
+### Prueba de guardar un nuevo usuario
+# POST para crear un nuevo usuario. Cambia los valores en el JSON según lo necesites para la prueba.
+POST http://localhost:3000/ms/v1/commonjs/user
+Content-Type: application/json
+
+{
+  "username": "username123",
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+###
+
+### Prueba de actualizar el token de autenticación
+# PUT para actualizar el token de un usuario. Cambia el cuerpo de la solicitud para adaptarlo a los datos de prueba.
+PUT http://localhost:3000/ms/v1/commonjs/user/token
+Content-Type: application/json
+
+{
+  "username": "username123",
+  "authToken": "newAuthToken123",
+  "expiresAt": "2024-12-31T23:59:59Z"
+}
+
+###

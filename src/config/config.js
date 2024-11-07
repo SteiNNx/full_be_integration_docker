@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(process.env);
-
 /**
  * Función para cargar claves desde archivos, con verificación y manejo de errores.
  * 
@@ -29,6 +27,7 @@ const config = {
         env: process.env.APP_ENV || 'development',
         port: parseInt(process.env.APP_PORT, 10) || 3000,
         prefixUrl: '/ms/v1/commonjs',
+        timeZone: 'America/Santiago'
     },
     axios: {
         timeOut: parseInt(process.env.AXIOS_CLIENT_TIMEOUT, 10) || 15000,

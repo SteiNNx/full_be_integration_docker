@@ -1,15 +1,10 @@
 // src/utils/date.utils.js
 
-const dayjs = require('dayjs');
-const utc = require('dayjs/plugin/utc');
-const timezone = require('dayjs/plugin/timezone');
-require('dayjs/locale/es'); // para formato local en español
+const moment = require('moment-timezone');
+const config = require('../config/config');
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
-
-// Configurar zona horaria por defecto a Santiago, Chile
-dayjs.tz.setDefault('America/Santiago');
+// Configurar la zona horaria por defecto a Santiago, Chile
+const DEFAULT_TIMEZONE = config.app.timeZone;
 
 /**
  * Obtiene la fecha y hora actual en la zona horaria de Santiago, Chile.
@@ -19,7 +14,7 @@ dayjs.tz.setDefault('America/Santiago');
  * console.log(currentDate); // "2024-11-06T15:23:45-03:00"
  */
 function getCurrentDateInSantiago() {
-    return dayjs().tz().format();
+    return moment().tz(DEFAULT_TIMEZONE).format();
 }
 
 /**
@@ -30,7 +25,7 @@ function getCurrentDateInSantiago() {
  * console.log(utcDate); // "2024-11-06T18:23:45Z"
  */
 function getCurrentDateInUTC() {
-    return dayjs().utc().format();
+    return moment().utc().format();
 }
 
 /**
@@ -41,7 +36,7 @@ function getCurrentDateInUTC() {
  * console.log(shortDate); // "06/11/2024"
  */
 function getShortDateInSantiago() {
-    return dayjs().tz().format('DD/MM/YYYY');
+    return moment().tz(DEFAULT_TIMEZONE).format('DD/MM/YYYY');
 }
 
 /**
@@ -52,7 +47,7 @@ function getShortDateInSantiago() {
  * console.log(isoDate); // "2024-11-06T15:23:45-03:00"
  */
 function getISODateInSantiago() {
-    return dayjs().tz().toISOString();
+    return moment().tz(DEFAULT_TIMEZONE).toISOString();
 }
 
 /**
@@ -63,7 +58,7 @@ function getISODateInSantiago() {
  * console.log(shortTime); // "15:23:45"
  */
 function getCurrentTimeInSantiago() {
-    return dayjs().tz().format('HH:mm:ss');
+    return moment().tz(DEFAULT_TIMEZONE).format('HH:mm:ss');
 }
 
 /**
@@ -76,7 +71,7 @@ function getCurrentTimeInSantiago() {
  * console.log(formattedDate); // "06/11/2024 15:23:45"
  */
 function formatSpecificDateInSantiago(date = new Date(), format = 'DD/MM/YYYY HH:mm:ss') {
-    return dayjs(date).tz().format(format);
+    return moment(date).tz(DEFAULT_TIMEZONE).format(format);
 }
 
 // Exportar funciones

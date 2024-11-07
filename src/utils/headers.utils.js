@@ -1,4 +1,5 @@
 const { formatSpecificDateInSantiago } = require('./date.utils');
+const { v4: uuidv4 } = require('uuid');
 
 /**
  * Genera y modifica los encabezados personalizados.

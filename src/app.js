@@ -5,9 +5,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 
-const config = require('./config/config');
+const errorHandlerMiddleware = require('./middlewares/errorHandler.middleware');   // Gestiona y centraliza el manejo de errores
+const LoggerUtils = require('./utils/logger.utils');
 const { routes } = require('./routes/routes');
-const LoggerUtils = require('./utils/LoggerUtils');
+const config = require('./config/config');
 
 // Obtener configuraciones
 const { app: { port } } = config;
@@ -15,8 +16,9 @@ const { app: { port } } = config;
 const app = express();
 const logger = new LoggerUtils('app');
 
+logger.info('Inicio configuración app.js');
+
 // Configuración de seguridad con Helmet
-logger.info('Iniciando configuración de seguridad con Helmet');
 app.use(helmet());
 logger.info('Middleware Helmet configurado');
 
@@ -25,23 +27,23 @@ app.use(helmet.hsts({
     includeSubDomains: true,
     preload: true
 }));
-logger.info('Configuración de HSTS aplicada');
 
 // Deshabilitar encabezado 'x-powered-by' para mayor seguridad
 app.disable('x-powered-by');
-logger.info('Encabezado x-powered-by deshabilitado');
 
 // Middleware de análisis de cuerpo de la solicitud
 app.use(bodyParser.json());
-logger.info('Middleware bodyParser configurado para analizar JSON');
 
 // Configuración de CORS
 app.use(cors());
-logger.info('Middleware CORS configurado');
 
 // Configuración de rutas
 routes(app);
 logger.info('Rutas configuradas');
+
+app.use(errorHandlerMiddleware);
+
+logger.info('Termino configuración app.js');
 
 // Inicio del servidor
 app.listen(port, () => {

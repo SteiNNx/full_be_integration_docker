@@ -1,6 +1,6 @@
 // src/components/auth/auth.controller.js
 
-const { OutputMessage } = require('../../schema/OutputMessage.schema');
+const { OutputMessage } = require('../../schemas/OutputMessage.schema');
 const {
     getUserByUsernameModule,
     saveUserModule,
@@ -19,12 +19,12 @@ const {
 const getUserByUsernameController = async (req, res) => {
     try {
         const responseGetUserByUsernameModule = await getUserByUsernameModule(req);
-        const outputResponse = OutputMessage(200, "Ok", responseGetUserByUsernameModule);
+        const outputResponse = new OutputMessage(200, "Ok", responseGetUserByUsernameModule);
 
         return res.status(200).json(outputResponse);
     } catch (error) {
         console.error('Error en getUserByUsernameController:', error);
-        return res.status(500).json(OutputMessage(500, "Error al obtener el usuario"));
+        return res.status(500).json(new OutputMessage(500, "Error al obtener el usuario"));
     }
 };
 
@@ -40,12 +40,12 @@ const getUserByUsernameController = async (req, res) => {
 const saveUserController = async (req, res) => {
     try {
         const response = await saveUserModule(req);
-        const outputResponse = OutputMessage(201, "Usuario creado exitosamente", response);
+        const outputResponse = new OutputMessage(201, "Usuario creado exitosamente", response);
 
         return res.status(201).json(outputResponse);
     } catch (error) {
         console.error('Error en saveUserController:', error);
-        return res.status(500).json(OutputMessage(500, "Error al guardar el usuario"));
+        return res.status(500).json(new OutputMessage(500, "Error al guardar el usuario"));
     }
 };
 
@@ -61,12 +61,12 @@ const saveUserController = async (req, res) => {
 const updateAuthTokenController = async (req, res) => {
     try {
         const response = await updateAuthTokenModule(req);
-        const outputResponse = OutputMessage(200, "Token de autenticación actualizado", response);
+        const outputResponse = new OutputMessage(200, "Token de autenticación actualizado", response);
 
         return res.status(200).json(outputResponse);
     } catch (error) {
         console.error('Error en updateAuthTokenController:', error);
-        return res.status(500).json(OutputMessage(500, "Error al actualizar el token de autenticación"));
+        return res.status(500).json(new OutputMessage(500, "Error al actualizar el token de autenticación"));
     }
 };
 

@@ -1,10 +1,10 @@
 // src/routes.js
 
-const authRoutes = require('../components/auth/auth.routes');
+const authRoutes = require('../components/auth/auth.route');
 const config = require('../config/config');
 const httpContext = require('@bech/express-http-context');
 const { configurarMonitoreo } = require('@bech/monitoreo');
-const LoggerUtils = require('../utils/LoggerUtils');
+const LoggerUtils = require('../utils/logger.utils');
 
 const logger = new LoggerUtils('routes');
 
@@ -27,7 +27,7 @@ const logger = new LoggerUtils('routes');
  */
 function routes(app) {
     const {
-        app: { prefixUrlApi },
+        app: { prefixUrl },
         monitoreo: { tipoPieza, nombrePieza },
     } = config;
 
@@ -43,8 +43,8 @@ function routes(app) {
     logger.info(`Middleware de monitoreo configurado: tipoPieza=${tipoPieza}, nombrePieza=${nombrePieza}`);
 
     // Configuración de rutas de autenticación con prefijo
-    authRoutes(app, prefixUrlApi);
-    logger.info(`Rutas de autenticación configuradas con prefijo: ${prefixUrlApi}`);
+    authRoutes(app, prefixUrl);
+    logger.info(`Rutas de autenticación configuradas con prefijo: ${prefixUrl}`);
 
     // Logging de finalización de configuración
     logger.info('Configuración de middlewares y rutas completada');

@@ -15,6 +15,9 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.682.0",
     "@aws-sdk/util-dynamodb": "^3.682.0",
+    "@bech/express-http-context": "^1.2.5",
+    "@bech/logger": "^6.0.2",
+    "@bech/monitoreo": "^7.0.0",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
@@ -24,6 +27,8 @@
     "express-openapi-validator": "^5.3.9",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.46",
     "swagger-ui-express": "^5.0.1",
     "uuid": "^11.0.2",
     "yamljs": "^0.3.0"
