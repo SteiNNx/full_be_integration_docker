@@ -1,5 +1,6 @@
 // src/components/auth/auth.module.js
 
+const { BusinessError } = require('../../exceptions/base.exceptions');
 const {
     getUserByUsernameService,
     saveUserService,
@@ -17,7 +18,14 @@ const {
 async function getUserByUsernameModule(req) {
     try {
         const { username } = req.params;
-        return await getUserByUsernameService(username);
+        const resultGetUserByUsernameService = await getUserByUsernameService(username);
+
+        if (!resultGetUserByUsernameService) {
+            throw new BusinessError('002', `Ocurrio un problema al buscar un usuario por su nombre de usuario ${username}`, 404);
+        }
+
+        return resultGetUserByUsernameService;
+
     } catch (error) {
         console.error('Error en getUserByUsernameModule:', error);
         throw error;

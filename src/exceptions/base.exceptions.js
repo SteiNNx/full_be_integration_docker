@@ -73,23 +73,29 @@ class BaseError extends Error {
  * @param {Error} [cause] - Causa original del error (opcional).
  * 
  * @example
- * throw new BusinessError('BUSINESS.001', 'Ocurrió un error de negocio.');
- * 
+ * throw new BusinessError('BUSINESS.001', 'Ocurrió un error de negocio 001.');
+ * throw new BusinessError('BUSINESS.002', 'Ocurrió un error de negocio 002.', 404);
  * @output
  * // {
  * //   "name": "BusinessError",
  * //   "code": "BUSINESS.001",
- * //   "message": "Ocurrió un error de negocio.",
+ * //   "message": "Ocurrió un error de negocio 001.",
  * //   "statusCode": 500
+ * // },
+ * // {
+ * //   "name": "BusinessError",
+ * //   "code": "BUSINESS.002",
+ * //   "message": "Ocurrió un error de negocio 002.",
+ * //   "statusCode": 404
  * // }
  */
 class BusinessError extends BaseError {
-    constructor(code, message, cause) {
+    constructor(code, message, statusCode = 500, cause) {
         super({
             message,
             code,
             name: 'BusinessError',
-            statusCode: 500,
+            statusCode: statusCode,
             cause
         });
     }

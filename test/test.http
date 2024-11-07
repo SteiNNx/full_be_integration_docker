@@ -6,7 +6,7 @@ GET http://localhost:3000/
 
 ### Prueba de obtener un usuario por nombre de usuario
 # GET a la ruta de autenticación para obtener datos de usuario por nombre de usuario
-GET http://localhost:3000/ms/v1/commonjs/user/user1
+GET http://localhost:3000/ms/v1/commonjs/user/user2
 
 ### 
 # Reemplaza {username} con un nombre de usuario de prueba

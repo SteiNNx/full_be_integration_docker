@@ -54,6 +54,7 @@ const config = {
         publicKey: loadKey(process.env.JWT_PUBLIC_KEY_PATH, 'pública'),
         expiration: process.env.JWT_EXPIRATION || '1h',
         expirationMs: parseInt(process.env.JWT_EXPIRATION_MS, 10) || 3600000,
+        saltRoundsHash: 10,
     },
     monitoreo: {
         tipoPieza: 'ms',

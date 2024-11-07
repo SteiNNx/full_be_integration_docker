@@ -8,6 +8,12 @@ const {
 
 const LoggerUtils = require('../../utils/logger.utils');
 const setHeadersMiddleware = require('../../middlewares/setHeaders.middleware');
+const validateSchemaRequestMiddleware = require('../../middlewares/validateSchemaRequest.middleware');
+const {
+    getUserByUsernameSchemaRequest,
+    saveUserSchemaRequest,
+    updateAuthTokenSchemaRequest,
+} = require('../../validations/auth.schema');
 
 const logger = new LoggerUtils('auth.routes');
 
@@ -54,6 +60,7 @@ function authRoutes(app, globalPathPrefix) {
     app.get(
         `${globalPathPrefix}/user/:username`,
         setHeadersMiddleware('Autenticación', 'Consulta', 'getUserByUsernameController'),
+        validateSchemaRequestMiddleware(getUserByUsernameSchemaRequest),
         getUserByUsernameController
     );
     logger.info(`[REGISTERED ROUTE] [GET] ${globalPathPrefix}/user/:username - auth.controller: getUserByUsernameController`);
@@ -61,6 +68,7 @@ function authRoutes(app, globalPathPrefix) {
     app.post(
         `${globalPathPrefix}/user`,
         setHeadersMiddleware('Autenticación', 'Creación', 'saveUserController'),
+        validateSchemaRequestMiddleware(saveUserSchemaRequest),
         saveUserController
     );
     logger.info(`[REGISTERED ROUTE] [POST] ${globalPathPrefix}/user - auth.controller: saveUserController`);
@@ -68,6 +76,7 @@ function authRoutes(app, globalPathPrefix) {
     app.put(
         `${globalPathPrefix}/user/token`,
         setHeadersMiddleware('Autenticación', 'Actualización', 'updateAuthTokenController'),
+        validateSchemaRequestMiddleware(updateAuthTokenSchemaRequest),
         updateAuthTokenController
     );
     logger.info(`[REGISTERED ROUTE] [PUT] ${globalPathPrefix}/user/token - auth.controller: updateAuthTokenController`);

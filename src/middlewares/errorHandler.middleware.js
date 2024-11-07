@@ -51,6 +51,13 @@ const errorHandlerMiddleware = async (err, req, res, next) => {
             console.error(`${key}: ${value}`);
         });
 
+        //const { ZodError } = require('zod');
+
+        //if (error instanceof ZodError) {
+        //    const errorMessages = error.errors.map((err) => err.message);
+        //    return res.status(400).json(new OutputMessage(400, "Error de validación", { errors: errorMessages }));
+        //}
+
         // Manejar errores de `express-openapi-validator` usando el nombre del error
         if (err.errors && err.errors.length) {
             // Manejo de errores de validación generados por OpenAPI Validator

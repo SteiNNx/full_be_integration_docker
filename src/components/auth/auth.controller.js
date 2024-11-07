@@ -1,5 +1,6 @@
 // src/components/auth/auth.controller.js
 
+const { BusinessError, TechnicalError } = require('../../exceptions/base.exceptions');
 const { OutputMessage } = require('../../schemas/OutputMessage.schema');
 const {
     getUserByUsernameModule,
@@ -23,6 +24,12 @@ const getUserByUsernameController = async (req, res) => {
 
         return res.status(200).json(outputResponse);
     } catch (error) {
+        if (err instanceof BusinessError || err instanceof TechnicalError) {
+            throw err;
+        }
+
+        //TODO: AQUI ACTUALIZAR TECHINICAL PARA QUE TENGA STATUSCODE COMO BUSINES Y GENERAR UN GENERICO AQUI EN CASO X.
+        // ADEMAS CHECKEAR MIDDLEWARE ERROR HANDLER
         console.error('Error en getUserByUsernameController:', error);
         return res.status(500).json(new OutputMessage(500, "Error al obtener el usuario"));
     }
